@@ -1,10 +1,10 @@
-name: hello word
+name: github actions
 on: push
 jobs:
-  build: 
+  action: 
     runs-on: ubuntu-latest
     steps:
-      - name: hello 
-        run: |
-          echo "Hello, ${{secrets.DOCKER_PASS}}"
- 
+     - name: checkout the code
+       uses: actions/checkout@v4
+     - name: print index.html file
+       run: cat index.html
