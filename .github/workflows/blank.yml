@@ -1,18 +1,9 @@
 name: hello word
-on: 
-  push:
-    branches:
-      - main
-      - feature/*
-  pull_request:
-    branches:
-      - main
-      - feature/*
+on:
+  push
 jobs:
-  build: 
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: hello 
-        run: |
-          echo "welcome to github-actions"
- 
+      - name: Hello world action step
+        run: echo "Hello, world!"
