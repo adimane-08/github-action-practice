@@ -1,16 +1,18 @@
-name: input test
+name: hello worls
 on:
-  workflow dispatch:
-    inputs:
-      environment:
-        description: this is the name input
-        required: true
-        default: dev
-  jobs:
-    test:
-      runs-on: ubuntu-latest
-      steps:
-        - name: print input
-          run: echo "deploying the application to the ${{inputs.environments}} environment"
-
-
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+  pull_request:
+    branches:
+      - main
+      - develop
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello world action step
+        run: echo "Hello world!"
+#dkdlkfdfndngit
