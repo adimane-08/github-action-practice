@@ -1,18 +1,14 @@
-name: hello worls
+name: input demo
 on:
-  push:
-    branches:
-      - main
-      - develop
-      - feature/*
-  pull_request:
-    branches:
-      - main
-      - develop
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: choose the environment to deploy to
+        required: true
+        default: staging
 jobs:
-  build:
+  input-demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello world action step
-        run: echo "Hello world!"
-#dkdlkfdfndn
+      - name: print environment
+        run: echo "deploying to ${{inputs}}
