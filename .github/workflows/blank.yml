@@ -20,4 +20,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print environment
-        run: echo "deploying to ${{ inputs.environment }}"
+        run: echo "deploying tthe${{inputs.artifact_tag}} ${{ inputs.environment }}"
