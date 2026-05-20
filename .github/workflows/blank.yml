@@ -6,6 +6,15 @@ on:
         description: choose the environment to deploy to
         required: true
         default: staging
+        type: choice
+        options:
+          - staging
+          - production
+          - testing
+      artifact_tag:
+        description: choose the tag to deploy
+        required: true
+        
 jobs:
   input-demo:
     runs-on: ubuntu-latest
