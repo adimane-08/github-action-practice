@@ -4,7 +4,9 @@ on:
     branches:
       - main
 jobs:
-   output-demo:
+   build:
+     outputs:
+       version: ${{ steps.step1.outputs.version }}
      runs-on: ubuntu-latest
      steps:
         - name: step one
@@ -12,3 +14,8 @@ jobs:
           run: echo "version=1.0.0" >> $GITHUB_OUTPUT
         - name: step two
           run: echo "this  version ${{ steps.step1.outputs.version }}"
+   test:
+     runs-on: ubuntu-latest
+     steps:
+       - name: build step
+         run: echo "this is the test job"
