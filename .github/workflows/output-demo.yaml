@@ -15,7 +15,8 @@ jobs:
         - name: step two
           run: echo "this  version ${{ steps.step1.outputs.version }}"
    test:
+     needs: build
      runs-on: ubuntu-latest
      steps:
        - name: build step
-         run: echo "this is the test job"
+         run: echo "testing version ${{ needs.build.outputs.version }}"
