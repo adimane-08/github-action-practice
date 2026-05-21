@@ -4,6 +4,6 @@ jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
-      - name: run for adi or adimane-08
+      - name: run for adi or adimane-0811
         if: github.actor == 'adi' || github.actor == 'adimane-08'
         run: echo "it is trigger by either adi or adimane-08" 
