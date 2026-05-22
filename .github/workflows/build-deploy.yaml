@@ -1,0 +1,13 @@
+name: build-deploy
+on: 
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: buid-test
+        run: "echo building the code"
